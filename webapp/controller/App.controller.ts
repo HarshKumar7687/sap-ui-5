@@ -8,15 +8,15 @@ import JSONModel from "sap/ui/model/json/JSONModel"; //json model
 export default class AppController extends Controller {
 	onInit(): void {
 	  // set data model on view
-		const data = {
+		const oData = {
 		   recipient: {
 			  name: "World"
 		   }
 		};
-		const dataModel = new JSONModel(data);
-		this.getView()?.setModel(dataModel);
+		const oModel = new JSONModel(oData);
+		this.getView()?.setModel(oModel);
 	}
-	
+
 	onShowHello(): void {
 		// alert("Hello World");
 		MessageToast.show("Hello World");
