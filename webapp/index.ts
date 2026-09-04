@@ -14,5 +14,3 @@ XMLView.create({
 });
 
 
-alert("Hello Alok the great!!!!");
-

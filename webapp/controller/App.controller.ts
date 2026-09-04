@@ -1,6 +1,8 @@
 import MessageToast from "sap/m/MessageToast";  //modules
 import Controller from "sap/ui/core/mvc/Controller"; //controller
 import JSONModel from "sap/ui/model/json/JSONModel"; //json model
+import ResourceModel from "sap/ui/model/resource/ResourceModel";
+import ResourceBundle from "sap/base/i18n/ResourceBundle";
 
 // /**
 //  * @name ui5.walkthrough.controller.App
@@ -14,11 +16,17 @@ export default class AppController extends Controller {
 		   }
 		};
 		const oModel = new JSONModel(oData);
-		this.getView()?.setModel(oModel);
+		this.getView()?.setModel(oModel,"Recipient");
+		const i18nModel = new ResourceModel({
+				bundleName: "ui5.walkthrough.i18n.i18n"
+		});
+		this.getView()?.setModel(i18nModel, "i18n");
 	}
 
 	onShowHello(): void {
-		// alert("Hello World");
-		MessageToast.show("Hello World");
+		const recipient = (this.getView()?.getModel("Recipient") as JSONModel)?.getProperty("/recipient/name");
+		const resourceBundle = (this.getView()?.getModel("i18n") as ResourceModel)?.getResourceBundle() as ResourceBundle;
+		const msg = resourceBundle.getText("helloMsg", [recipient]) as string;
+		MessageToast.show(msg);
 	 }
 };
