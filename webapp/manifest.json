@@ -33,7 +33,7 @@
       }
     },
     "rootView": {
-      "viewName": "ui5.tutorial.walkthrough.view.App",
+      "viewName": "ui5.walkthrough.view.App",
       "type": "XML",
       "id": "app"
     },
