@@ -1,0 +1,68 @@
+<mvc:View
+   controllerName="ui5.tutorial.walkthrough.controller.App"
+   xmlns="sap.m"
+   xmlns:mvc="sap.ui.core.mvc"
+   xmlns:form="sap.ui.layout.form">
+
+   <form:SimpleForm
+      editable="true"
+      layout="ResponsiveGridLayout">
+
+      <Label text="Name"/>
+      <Input
+         value="{/unnamed/name}" 
+         description="Hello {/unnamed/name}"
+         valueLiveUpdate="true"
+         width="60%"/>
+
+      <Label text="College"/>
+      <Input
+         value="{/unnamed/collage}"
+         description="Hello {/unnamed/collage}"
+         valueLiveUpdate="true"
+         width="60%"/>
+
+      <Label text="Company"/>
+      <Input
+         value="{/unnamed/company}"
+         description="Hello {/unnamed/company}"
+         valueLiveUpdate="true"
+         width="60%"/>
+
+   </form:SimpleForm>
+
+   <Button
+      text="{i18n>showUnnamedFormText}"
+      press=".onShowUnnamedForm"/>
+
+   <form:SimpleForm
+      editable="true"
+      layout="ResponsiveGridLayout">
+
+      <Label text="Name"/>
+      <Input
+         value="{Named>/named/name}"
+         description="Hello {Named>/named/name}"
+         valueLiveUpdate="true"
+         width="60%"/>
+
+      <Label text="College"/>
+      <Input
+         value="{Named>/named/collage}"
+         description="Hello {Named>/named/collage}"
+         valueLiveUpdate="true"
+         width="60%"/>
+
+      <Label text="Company"/>
+      <Input
+         value="{Named>/named/company}"
+         description="Hello {Named>/named/company}"
+         valueLiveUpdate="true"
+         width="60%"/>
+
+   </form:SimpleForm>
+   
+   <Button
+      text="{i18n>showNamedFormText}"
+      press=".onShowNamedForm"/>
+</mvc:View>

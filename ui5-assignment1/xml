@@ -1,0 +1,39 @@
+<mvc:View
+	controllerName="ui5.walkthrough.controller.App"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:form="sap.ui.layout.form"
+	displayBlock="true">
+	<App>
+		<pages>
+			<Page title="JSON Model Binding with SimpleForm">
+				<content>
+					<Panel headerText="Company Details (Model without name)">
+						<content>
+							<form:SimpleForm editable="true" layout="ResponsiveGridLayout">
+								<Label text="Company Name"/>
+								<Input value="{/company/name}"/>
+								<Label text="City"/>
+								<Input value="{/company/city}"/>
+								<Label text="Country"/>
+								<Input value="{/company/country}"/>
+							</form:SimpleForm>
+						</content>
+					</Panel>
+					<Panel headerText="Employee Details (Model with name: employeeModel)">
+						<content>
+							<form:SimpleForm editable="true" layout="ResponsiveGridLayout">
+								<Label text="First Name"/>
+								<Input value="{employeeModel>/employee/firstName}"/>
+								<Label text="Last Name"/>
+								<Input value="{employeeModel>/employee/lastName}"/>
+								<Label text="Email"/>
+								<Input value="{employeeModel>/employee/email}"/>
+							</form:SimpleForm>
+						</content>
+					</Panel>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>
